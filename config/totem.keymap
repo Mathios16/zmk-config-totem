@@ -86,6 +86,11 @@
             timeout-ms = <100>;
             require-prior-idle-ms = <150>;
         };
+
+        fps_combo {
+            bindings = <&lt 9 LA(RA(NUMBER_1))>;
+            key-positions = <20 18 36 22>;
+        };
     };
 
     keymap {
@@ -178,6 +183,15 @@
         &kp LGUI  &kp LALT  &kp LCTRL    &kp LSHFT    &mo 8          &mo 8        &kp LSHFT    &kp LCTRL    &kp LALT  &kp LGUI
 &trans  &mkp MB5  &mkp MB4  &kp LS(DEL)  &kp LC(INS)  &kp LS(INS)    &kp LS(INS)  &kp LC(INS)  &kp LS(DEL)  &mkp MB4  &mkp MB5  &trans
                             &mkp MCLK    &mkp LCLK    &mkp RCLK      &mkp RCLK    &mkp LCLK    &mkp MCLK
+            >;
+        };
+
+        fps_layer {
+            bindings = <
+          &kp TAB    &kp Q   &trans  &kp E   &kp R     &trans     &trans     &trans    &trans     &trans
+          &kp LSHFT  &kp A   &kp W   &kp D   &kp N6    &trans     &kp LEFT   &kp UP    &kp RIGHT  &trans
+&kp LALT  &kp LCTRL  &trans  &kp S   &kp N5  &kp N4    &trans     &trans     &kp DOWN  &trans     &trans  &kp RALT
+                             &kp N3  &kp N2  &kp N1    &kp ENTER  &kp SPACE  &kp ESC
             >;
         };
     };
