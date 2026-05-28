@@ -22,7 +22,9 @@
 #define SYM         5
 #define FUN         6
 #define BUTTON      7
+
 // scroll_layer is index 8 (unnamed define, referenced as literal 8 in button_layer)
+
 #define FPS         9
 #define GAME_SEL   10
 
@@ -104,6 +106,7 @@
         // │    T → futuro game 5                                        │
         // │    thumb ESC → cancela e volta ao BASE                      │
         // └─────────────────────────────────────────────────────────────┘
+
         game_sel_combo {
             bindings = <&sl GAME_SEL>;
             key-positions = <20 31>;
@@ -217,10 +220,10 @@
         game_sel_layer {
             display-name = "GameSel";
             bindings = <
-          &to FPS    &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans     &trans
-          &trans     &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans     &trans
-&kp LALT  &trans     &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans     &trans  &kp RALT
-                             &trans  &trans  &trans    &trans     &trans     &trans
+          &to FPS  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+          &trans   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&kp LALT  &trans   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp RALT
+                           &trans  &trans  &to 0     &trans  &trans  &trans
             >;
         };
     };
