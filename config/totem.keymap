@@ -22,6 +22,9 @@
 #define SYM         5
 #define FUN         6
 #define BUTTON      7
+// scroll_layer is index 8 (unnamed define, referenced as literal 8 in button_layer)
+#define FPS         9
+#define GAME_SEL   10
 
 // Key position definitions for 38-key Totem layout
 
@@ -87,9 +90,25 @@
             require-prior-idle-ms = <150>;
         };
 
-        fps_combo {
-            bindings = <&lt 9 LA(RA(NUMBER_1))>;
-            key-positions = <20 18 36 22>;
+        // ┌─────────────────────────────────────────────────────────────┐
+        // │  GAME SELECT COMBO                                          │
+        // │  Pressione as duas colunas externas simultaneamente:        │
+        // │    pos 20 (outer-left) + pos 31 (outer-right)               │
+        // │  Ativa a sticky layer GAME_SEL por 1 tecla.                 │
+        // │                                                             │
+        // │  Na layer GAME_SEL, pressione:                              │
+        // │    Q → FPS layer  (game 1)                                  │
+        // │    W → futuro game 2                                        │
+        // │    E → futuro game 3                                        │
+        // │    R → futuro game 4                                        │
+        // │    T → futuro game 5                                        │
+        // │    thumb ESC → cancela e volta ao BASE                      │
+        // └─────────────────────────────────────────────────────────────┘
+        game_sel_combo {
+            bindings = <&sl GAME_SEL>;
+            key-positions = <20 31>;
+            timeout-ms = <100>;
+            layers = <BASE>;
         };
     };
 
@@ -192,6 +211,16 @@
           &kp LSHFT  &kp A   &kp W   &kp D   &kp N6    &trans     &kp LEFT   &kp UP     &kp RIGHT  &trans
 &kp LALT  &kp LCTRL  &trans  &kp S   &kp N5  &kp N4    &trans     &trans     &kp DOWN   &trans     &trans  &kp RALT
                              &kp N3  &kp N2  &kp N1    &kp ENTER  &kp SPACE  &lt 0 ESC
+            >;
+        };
+
+        game_sel_layer {
+            display-name = "GameSel";
+            bindings = <
+          &to FPS    &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans     &trans
+          &trans     &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans     &trans
+&kp LALT  &trans     &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans     &trans  &kp RALT
+                             &trans  &trans  &trans    &trans     &trans     &trans
             >;
         };
     };
