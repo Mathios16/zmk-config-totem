@@ -211,7 +211,7 @@
         game_sel_layer {
             display-name = "GameSel";
             bindings = <
-          &to 10  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+          &to 10  &to 11  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
           &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
 &kp LALT  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp RALT
                           &trans  &trans  &to 0     &trans  &trans  &trans
