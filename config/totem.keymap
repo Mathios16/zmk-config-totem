@@ -109,7 +109,7 @@
 
         game_sel_combo {
             bindings = <&sl 9>;
-            key-positions = <20 31>;
+            key-positions = <21 30>;
             timeout-ms = <200>;
             require-prior-idle-ms = <20>;
         };
@@ -229,10 +229,10 @@
 
         brwllha_layer {
             bindings = <
-          &kp NUMBER_1  &trans  &trans  &trans     &trans     &kp LEFT_BRACKET   &trans          &trans          &trans           &trans
-          &kp S         &kp R   &kp T   &kp Y      &trans     &kp RIGHT_BRACKET  &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &trans
-&kp LALT  &kp NUMBER_2  &trans  &trans  &trans     &trans     &trans             &trans          &kp DOWN_ARROW  &trans           &trans  &trans
-                                &kp N   &kp SPACE  &kp TAB    &kp ENTER          &kp N           &kp ESC
+          &kp S         &kp R         &kp T         &kp Y      &trans     &kp LEFT_BRACKET   &trans          &trans          &trans           &trans
+          &trans        &trans        &trans        &trans     &trans     &kp RIGHT_BRACKET  &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &trans
+&kp LALT  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans     &trans             &trans          &kp DOWN_ARROW  &trans           &trans  &trans
+                                      &kp N         &kp SPACE  &kp TAB    &kp ENTER          &kp N           &kp ESC
             >;
         };
     };
