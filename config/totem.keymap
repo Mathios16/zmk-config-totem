@@ -110,8 +110,8 @@
         game_sel_combo {
             bindings = <&sl 9>;
             key-positions = <20 31>;
-            timeout-ms = <100>;
-            layers = <0 10 11>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <20>;
         };
     };
 
