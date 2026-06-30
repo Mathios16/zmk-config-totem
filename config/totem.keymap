@@ -22,11 +22,9 @@
 #define SYM         5
 #define FUN         6
 #define BUTTON      7
-
-// scroll_layer is index 8 (unnamed define, referenced as literal 8 in button_layer)
-
-#define FPS         9
-#define GAME_SEL   10
+#define BASE_GAMES  9
+#define BRWLLHA    10
+#define GAME_PLUS  11
 
 // Key position definitions for 38-key Totem layout
 
@@ -90,28 +88,6 @@
             key-positions = <13 16>;
             timeout-ms = <100>;
             require-prior-idle-ms = <150>;
-        };
-
-        // ┌─────────────────────────────────────────────────────────────┐
-        // │  GAME SELECT COMBO                                          │
-        // │  Pressione as duas colunas externas simultaneamente:        │
-        // │    pos 20 (outer-left) + pos 31 (outer-right)               │
-        // │  Ativa a sticky layer GAME_SEL por 1 tecla.                 │
-        // │                                                             │
-        // │  Na layer GAME_SEL, pressione:                              │
-        // │    Q → FPS layer  (game 1)                                  │
-        // │    W → futuro game 2                                        │
-        // │    E → futuro game 3                                        │
-        // │    R → futuro game 4                                        │
-        // │    T → futuro game 5                                        │
-        // │    thumb ESC → cancela e volta ao BASE                      │
-        // └─────────────────────────────────────────────────────────────┘
-
-        game_sel_combo {
-            bindings = <&sl 9>;
-            key-positions = <21 30>;
-            timeout-ms = <200>;
-            require-prior-idle-ms = <20>;
         };
     };
 
@@ -181,7 +157,7 @@
         fun_layer {
             display-name = "Fun";
             bindings = <
-        &kp F12  &kp F7  &kp F8     &kp F9     &kp PSCRN          &to 10  &to 11     &trans     &trans    &trans
+        &kp F12  &kp F7  &kp F8     &kp F9     &kp PSCRN          &to BASE_GAMES  &to BRWLLHA     &trans     &trans    &trans
         &kp F11  &kp F4  &kp F5     &kp F6     &kp SLCK           &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 &trans  &kp F10  &kp F1  &kp F2     &kp F3     &kp PAUSE_BREAK    &trans  &trans     &trans     &trans    &trans    &trans
                          &kp K_APP  &kp SPACE  &kp TAB            &trans  &trans     &trans
@@ -208,8 +184,28 @@
             >;
         };
 
-        game+ {
-            display-name = "Game+";
+        base_games_layer {
+            display-name = "Base_games";
+            bindings = <
+            &kp Z       &kp Q  &kp C             &kp E     &sl GAME_PLUS  &trans  &trans  &trans  &trans  &trans
+            &kp TAB     &kp A  &kp W             &kp D     &kp R          &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE  &kp LSHIFT  &kp X  &kp S             &kp V     &kp F          &trans  &trans  &trans  &trans  &trans  &trans
+                               &kp LEFT_CONTROL  &kp LALT  &kp SPACE      &trans  &trans  &trans
+            >;
+        };
+
+        brwllha_layer {
+            display-name = "Brwllha";
+            bindings = <
+          &trans        &trans        &trans        &trans     &sl GAME_PLUS  &kp LEFT_BRACKET   &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp R
+          &kp S         &kp R         &kp T         &kp Y      &trans         &kp RIGHT_BRACKET  &trans          &kp DOWN_ARROW  &trans           &trans
+&kp LALT  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans         &trans             &trans          &trans          &trans           &trans  &kp ESC
+                                      &kp N         &kp SPACE  &kp TAB        &kp SPACE          &kp N           &kp ENTER
+            >;
+        };
+
+        game_plus_layer {
+            display-name = "Game_plus";
             bindings = <
        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
        &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp F6  &kp F7  &trans  &trans  &trans
@@ -217,23 +213,4 @@
                                    &kp J         &kp I         &kp M           &to 0   &trans  &trans
             >;
         };
-
-        base_games_layer {
-            bindings = <
-            &kp Z       &kp Q  &kp C             &kp E     &sl 9        &trans  &trans  &trans  &trans  &trans
-            &kp TAB     &kp A  &kp W             &kp D     &kp R        &trans  &trans  &trans  &trans  &trans
-&kp ESCAPE  &kp LSHIFT  &kp X  &kp S             &kp V     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
-                               &kp LEFT_CONTROL  &kp LALT  &kp SPACE    &trans  &trans  &trans
-            >;
-        };
-
-        brwllha_layer {
-            bindings = <
-          &trans        &trans        &trans        &trans     &sl 9      &kp LEFT_BRACKET   &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp R
-          &kp S         &kp R         &kp T         &kp Y      &trans     &kp RIGHT_BRACKET  &trans          &kp DOWN_ARROW  &trans           &trans
-&kp LALT  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans     &trans             &trans          &trans          &trans           &trans  &kp ESC
-                                      &kp N         &kp SPACE  &kp TAB    &kp SPACE          &kp N           &kp ENTER
-            >;
-        };
     };
-};
