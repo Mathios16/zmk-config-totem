@@ -58,7 +58,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <250>;
             quick-tap-ms = <165>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <20>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -72,7 +72,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <250>;
             quick-tap-ms = <165>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <20>;
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <KEYS_L THUMBS>;
