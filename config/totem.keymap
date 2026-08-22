@@ -158,10 +158,10 @@
         fun_layer {
             display-name = "Fun";
             bindings = <
-        &kp F12  &kp F7  &kp F8     &kp F9     &kp PSCRN          &to BASE_GAMES  &to BRWLLHA  &trans     &trans    &trans
-        &kp F11  &kp F4  &kp F5     &kp F6     &kp SLCK           &trans          &kp LSHFT    &kp LCTRL  &kp LALT  &kp LGUI
-&trans  &kp F10  &kp F1  &kp F2     &kp F3     &kp PAUSE_BREAK    &trans          &trans       &trans     &trans    &trans    &trans
-                         &kp K_APP  &kp SPACE  &kp TAB            &trans          &trans       &trans
+        &kp F12  &kp F7  &kp F8     &kp F9     &kp PSCRN          &to 9   &to 10     &trans     &trans    &trans
+        &kp F11  &kp F4  &kp F5     &kp F6     &kp SLCK           &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&trans  &kp F10  &kp F1  &kp F2     &kp F3     &kp PAUSE_BREAK    &trans  &trans     &trans     &trans    &trans    &trans
+                         &kp K_APP  &kp SPACE  &kp TAB            &trans  &trans     &trans
             >;
         };
 
@@ -188,20 +188,29 @@
         base_games_layer {
             display-name = "Base_games";
             bindings = <
-            &kp Z       &kp Q  &kp C             &kp E     &sl GAME_PLUS    &trans  &trans  &trans  &trans  &trans
-            &kp TAB     &kp A  &kp W             &kp D     &kp R            &trans  &trans  &trans  &trans  &trans
-&kp ESCAPE  &kp LSHIFT  &kp X  &kp S             &kp V     &kp F            &trans  &trans  &trans  &trans  &trans  &trans
-                               &kp LEFT_CONTROL  &kp LALT  &kp SPACE        &trans  &trans  &trans
+            &kp Z       &kp Q  &kp C   &kp E     &kp R           &trans  &trans  &trans  &trans  &trans
+            &kp TAB     &kp A  &kp W   &kp D     &kp F           &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE  &kp LSHIFT  &kp X  &kp S   &kp V     &kp LEFT_ALT    &trans  &trans  &trans  &trans  &trans  &trans
+                               &sl 12  &kp LALT  &kp SPACE       &trans  &trans  &trans
             >;
         };
 
         brwllha_layer {
             display-name = "Brwllha";
             bindings = <
-          &trans        &trans        &trans        &trans     &sl GAME_PLUS    &kp LEFT_BRACKET   &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp R
-          &kp S         &kp R         &kp T         &kp Y      &trans           &kp RIGHT_BRACKET  &trans          &kp DOWN_ARROW  &trans           &trans
-&kp LALT  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans           &trans             &trans          &trans          &trans           &trans  &kp ESC
-                                      &kp N         &kp SPACE  &kp TAB          &kp SPACE          &kp N           &kp ENTER
+          &trans        &trans        &trans        &trans     &sl 12     &kp LEFT_BRACKET   &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp R
+          &kp S         &kp R         &kp T         &kp Y      &trans     &kp RIGHT_BRACKET  &trans          &kp DOWN_ARROW  &trans           &trans
+&kp LALT  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans     &trans             &trans          &trans          &trans           &trans  &kp ESC
+                                      &kp N         &kp SPACE  &kp TAB    &kp SPACE          &kp N           &kp ENTER
+            >;
+        };
+
+        sf6_layer {
+            bindings = <
+        &trans  &trans  &trans  &trans  &sl 12    &trans     &kp A   &kp S   &kp D   &trans
+        &trans  &kp O   &kp I   &kp U   &trans    &trans     &trans  &trans  &trans  &trans
+&trans  &trans  &kp L   &kp K   &kp J   &trans    &trans     &trans  &trans  &trans  &trans  &trans
+                        &kp N   &kp Y   &kp H     &kp ENTER  &kp W   &trans
             >;
         };
 
